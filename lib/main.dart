@@ -40,7 +40,9 @@ class _GamePageState extends State<GamePage> {
               ),
             ),
             FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                print('Button pressed!');
+              },
               child: Text(
                 'Hit Me!',
                 style: TextStyle(color: Colors.blue),
