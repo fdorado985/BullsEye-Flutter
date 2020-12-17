@@ -25,6 +25,8 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
+  bool _alertIsVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +43,8 @@ class _GamePageState extends State<GamePage> {
             ),
             FlatButton(
               onPressed: () {
+                this._alertIsVisible = true;
+                _showAlert(context);
                 print('Button pressed!');
               },
               child: Text(
@@ -51,6 +55,31 @@ class _GamePageState extends State<GamePage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showAlert(BuildContext context) {
+    Widget okButton = FlatButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+        this._alertIsVisible = false;
+        print("Awesome pressed! $_alertIsVisible");
+      },
+      child: Text('Awesome'),
+    );
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Hello there!'),
+          content: Text('This is my first pop-up.'),
+          actions: [
+            okButton,
+          ],
+          elevation: 5,
+        );
+      },
     );
   }
 }
