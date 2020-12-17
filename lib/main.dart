@@ -27,6 +27,28 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Hello BullsEye',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.green,
+              ),
+            ),
+            FlatButton(
+              onPressed: () {},
+              child: Text(
+                'Hit Me!',
+                style: TextStyle(color: Colors.blue),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
