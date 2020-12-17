@@ -1,3 +1,4 @@
+import 'package:BullsEye/control.dart';
 import 'package:BullsEye/prompt.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -42,6 +43,7 @@ class _GamePageState extends State<GamePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Prompt(targetValue: 100),
+            Control(),
             FlatButton(
               onPressed: () {
                 this._alertIsVisible = true;
