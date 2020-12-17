@@ -26,6 +26,7 @@ class GamePage extends StatefulWidget {
 
 class _GamePageState extends State<GamePage> {
   bool _alertIsVisible = false;
+  bool _knockKnockAlertIsVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,10 @@ class _GamePageState extends State<GamePage> {
               ),
             ),
             FlatButton(
-              onPressed: () {},
+              onPressed: () {
+                this._knockKnockAlertIsVisible = true;
+                _shoowWhosThere(context);
+              },
               child: Text(
                 'Knock, Knock',
                 style: TextStyle(color: Colors.blue),
@@ -62,6 +66,28 @@ class _GamePageState extends State<GamePage> {
           ],
         ),
       ),
+    );
+  }
+
+  void _shoowWhosThere(BuildContext context) {
+    Widget jokeButton = FlatButton(
+      onPressed: () {
+        Navigator.of(context).pop();
+        _knockKnockAlertIsVisible = false;
+      },
+      child: Text('Nobody, tap the button!'),
+    );
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Knock, Knock...'),
+          content: Text('Who\'s there?'),
+          actions: [jokeButton],
+          elevation: 5,
+        );
+      },
     );
   }
 
