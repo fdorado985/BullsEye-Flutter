@@ -8,7 +8,25 @@ class BullsEyeApp extends StatelessWidget {
     return MaterialApp(
       title: 'BullsEye',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Container(),
+      home: GamePage(
+        title: 'BullsEye',
+      ),
     );
+  }
+}
+
+class GamePage extends StatefulWidget {
+  GamePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  _GamePageState createState() => _GamePageState();
+}
+
+class _GamePageState extends State<GamePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
