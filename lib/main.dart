@@ -1,5 +1,6 @@
 import 'package:BullsEye/control.dart';
 import 'package:BullsEye/prompt.dart';
+import 'package:BullsEye/score.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -55,28 +56,7 @@ class _GamePageState extends State<GamePage> {
                 style: TextStyle(color: Colors.blue),
               ),
             ),
-            Row(
-              children: [
-                FlatButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Start Over',
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                ),
-                Text('Score'),
-                Text('99999'),
-                Text('Round'),
-                Text('999'),
-                FlatButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Info',
-                    style: TextStyle(color: Colors.blue),
-                  ),
-                ),
-              ],
-            )
+            Score(totalScore: 0, round: 1),
           ],
         ),
       ),

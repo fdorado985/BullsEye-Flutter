@@ -12,6 +12,28 @@ class Score extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        FlatButton(
+          onPressed: () {},
+          child: Text(
+            'Start Over',
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
+        Text('Score: '),
+        Text('$totalScore'),
+        Text('Round: '),
+        Text('$round'),
+        FlatButton(
+          onPressed: () {},
+          child: Text(
+            'Info',
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
+      ],
+    );
   }
 }
