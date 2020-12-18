@@ -5,10 +5,12 @@ class Score extends StatelessWidget {
     Key key,
     @required this.totalScore,
     @required this.round,
+    @required this.onStartOver,
   }) : super(key: key);
 
   final int totalScore;
   final int round;
+  final VoidCallback onStartOver;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class Score extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         FlatButton(
-          onPressed: () {},
+          onPressed: onStartOver,
           child: Text(
             'Start Over',
             style: TextStyle(color: Colors.blue),
