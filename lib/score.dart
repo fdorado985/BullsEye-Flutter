@@ -22,10 +22,24 @@ class Score extends StatelessWidget {
             style: TextStyle(color: Colors.blue),
           ),
         ),
-        Text('Score: '),
-        Text('$totalScore'),
-        Text('Round: '),
-        Text('$round'),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Text('Score: '),
+              Text('$totalScore'),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              Text('Round: '),
+              Text('$round'),
+            ],
+          ),
+        ),
         FlatButton(
           onPressed: () {},
           child: Text(
