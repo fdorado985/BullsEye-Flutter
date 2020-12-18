@@ -37,7 +37,6 @@ class GamePage extends StatefulWidget {
 }
 
 class _GamePageState extends State<GamePage> {
-  bool _alertIsVisible = false;
   GameModel _model;
 
   @override
@@ -58,10 +57,6 @@ class _GamePageState extends State<GamePage> {
             FlatButton(
               onPressed: () {
                 _showAlert(context);
-                setState(() {
-                  this._alertIsVisible = true;
-                  _model.totalScore += _pointsForCurrentRound();
-                });
               },
               child: Text(
                 'Hit Me!',
@@ -88,8 +83,10 @@ class _GamePageState extends State<GamePage> {
     Widget okButton = FlatButton(
       onPressed: () {
         Navigator.of(context).pop();
-        this._alertIsVisible = false;
-        print("Awesome pressed! $_alertIsVisible");
+        setState(() {
+          _model.totalScore += _pointsForCurrentRound();
+          _model.target = Random().nextInt(100) + 1;
+        });
       },
       child: Text('Awesome'),
     );
