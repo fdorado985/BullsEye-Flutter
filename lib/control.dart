@@ -16,7 +16,7 @@ class _ControlState extends State<Control> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.all(90.0),
+          padding: const EdgeInsets.only(left: 90.0),
           child: Text(
             '1',
             style: TextStyle(
@@ -37,7 +37,7 @@ class _ControlState extends State<Control> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(64.0),
+          padding: const EdgeInsets.only(right: 64.0),
           child: Text(
             '100',
             style: TextStyle(
