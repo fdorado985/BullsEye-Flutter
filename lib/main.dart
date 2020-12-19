@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:BullsEye/control.dart';
-import 'package:BullsEye/gamemodel.dart';
+import 'package:BullsEye/game_model.dart';
 import 'package:BullsEye/prompt.dart';
 import 'package:BullsEye/score.dart';
 import 'package:flutter/material.dart';
