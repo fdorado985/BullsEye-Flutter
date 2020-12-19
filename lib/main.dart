@@ -52,6 +52,7 @@ class _GamePageState extends State<GamePage> {
         color: Colors.white,
         image: DecorationImage(
           image: AssetImage('assets/images/background.png'),
+          fit: BoxFit.cover,
         ),
       ),
       child: Scaffold(
