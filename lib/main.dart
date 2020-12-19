@@ -16,6 +16,7 @@ class BullsEyeApp extends StatelessWidget {
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
     ]);
+    SystemChrome.setEnabledSystemUIOverlays([]);
 
     return MaterialApp(
       title: 'BullsEye',
