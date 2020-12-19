@@ -1,3 +1,4 @@
+import 'package:BullsEye/text_styles.dart';
 import 'package:flutter/material.dart';
 
 class Score extends StatelessWidget {
@@ -25,20 +26,38 @@ class Score extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
+          padding: const EdgeInsets.only(
+            left: 32.0,
+            right: 32.0,
+          ),
+          child: Column(
             children: [
-              Text('Score: '),
-              Text('$totalScore'),
+              Text(
+                'Score: ',
+                style: LabelTextStyle.bodyText1(context),
+              ),
+              Text(
+                '$totalScore',
+                style: ScoreNumberTextStyle.headline4(context),
+              ),
             ],
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
+          padding: const EdgeInsets.only(
+            left: 32.0,
+            right: 32.0,
+          ),
+          child: Column(
             children: [
-              Text('Round: '),
-              Text('$round'),
+              Text(
+                'Round: ',
+                style: LabelTextStyle.bodyText1(context),
+              ),
+              Text(
+                '$round',
+                style: ScoreNumberTextStyle.headline4(context),
+              ),
             ],
           ),
         ),
