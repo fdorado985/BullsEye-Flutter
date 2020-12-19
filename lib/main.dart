@@ -47,28 +47,37 @@ class _GamePageState extends State<GamePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Prompt(targetValue: _model.target),
-            Control(model: _model),
-            FlatButton(
-              onPressed: () {
-                _showAlert(context);
-              },
-              child: Text(
-                'Hit Me!',
-                style: TextStyle(color: Colors.blue),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        image: DecorationImage(
+          image: AssetImage('assets/images/background.png'),
+        ),
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Prompt(targetValue: _model.target),
+              Control(model: _model),
+              FlatButton(
+                onPressed: () {
+                  _showAlert(context);
+                },
+                child: Text(
+                  'Hit Me!',
+                  style: TextStyle(color: Colors.blue),
+                ),
               ),
-            ),
-            Score(
-              totalScore: _model.totalScore,
-              round: _model.round,
-              onStartOver: _startNewGame,
-            ),
-          ],
+              Score(
+                totalScore: _model.totalScore,
+                round: _model.round,
+                onStartOver: _startNewGame,
+              ),
+            ],
+          ),
         ),
       ),
     );
