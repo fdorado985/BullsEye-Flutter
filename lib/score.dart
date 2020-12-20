@@ -1,3 +1,4 @@
+import 'package:BullsEye/about_screen.dart';
 import 'package:BullsEye/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'styled_button.dart';
@@ -60,7 +61,14 @@ class Score extends StatelessWidget {
           ),
         ),
         StyledButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AboutScreen(),
+              ),
+            );
+          },
           icon: Icons.info,
         ),
       ],
